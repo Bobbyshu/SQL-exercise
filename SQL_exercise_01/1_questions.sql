@@ -1,5 +1,5 @@
 -- LINK: https://en.wikibooks.org/wiki/SQL_Exercises/The_computer_store
--- 1.1 Select the names of all the products in the store.
+-- 1.1 Select the names of all the products in the store. 
 select name from products;
 -- 1.2 Select the names and the prices of all the products in the store.
 select name, price from products;
