@@ -4,8 +4,11 @@ select name from products;
 -- 1.2 Select the names and the prices of all the products in the store.
 select name, price from products;
 -- 1.3 Select the name of the products with a price less than or equal to $200.
+select name from products where price <= 200;
 -- 1.4 Select all the products with a price between $60 and $120.
+select * from products where price >= 60 and price <= 200;
 -- 1.5 Select the name and price in cents (i.e., the price must be multiplied by 100).
+select name, price 
 -- 1.6 Compute the average price of all the products.
 -- 1.7 Compute the average price of all products with manufacturer code equal to 2.
 -- 1.8 Compute the number of products with a price larger than or equal to $180.
