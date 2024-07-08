@@ -73,11 +73,21 @@ on(a.manufacturer=b.code);
 select AVG(products.price), manufacturer
 from products
 group by manufacturer;
+
+
 -- 1.13 Select the average price of each manufacturer's products, showing the manufacturer's name.
 select AVG(products.price), manufacturers.name
 from products
 inner join manufacturers on products.manufacturer=manufacturers.code
 group by manufacturer;
+
+(answer sub)
+select avg(a.price), b.name 
+from Products a join Manufacturers b 
+on a.manufacturer = b.code
+group by b.name
+
+
 -- 1.14 Select the names of manufacturer whose products have an average price larger than or equal to $150.
 -- 1.15 Select the name and price of the cheapest product.
 -- 1.16 Select the name of each manufacturer along with the name and price of its most expensive product.
