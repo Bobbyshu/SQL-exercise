@@ -60,7 +60,15 @@ on(a.manufacturer=b.code);
 -- 1.11 Select the product name, price, and manufacturer name of all the products.
 select products.name, price, manufacturers.name
 from products
-inner join manufacturers on products.manufacturer=manufacturers.code
+inner join manufacturers 
+on products.manufacturer=manufacturers.code
+
+select a.name, a.price, b.name
+from products a
+join manufacturers b
+on(a.manufacturer=b.code);
+
+
 -- 1.12 Select the average price of each manufacturer's products, showing only the manufacturer's code.
 select AVG(products.price), manufacturer
 from products
