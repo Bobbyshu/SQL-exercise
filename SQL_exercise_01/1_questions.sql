@@ -96,8 +96,41 @@ select a.name
     -> having avg(b.price) >= 150;
 
 -- 1.15 Select the name and price of the cheapest product.
+select name, price
+    -> from products
+    -> where price=(select min(price) from products);
+
+
 -- 1.16 Select the name of each manufacturer along with the name and price of its most expensive product.
+SELECT m.name, p.name, p.price
+    -> FROM manufacturers m
+    -> JOIN products p ON m.code = p.manufacturer
+    -> WHERE p.price = (
+    ->     SELECT MAX(p2.price)
+    ->     FROM products p2
+    ->     WHERE p2.manufacturer = m.code
+    -> );
+
+
 -- 1.17 Add a new product: Loudspeakers, $70, manufacturer 2.
+insert into products(code, name, price, manufacturer)
+    -> values(11, 'Loudspeakers', 70, 2);
+
+
 -- 1.18 Update the name of product 8 to "Laser Printer".
+update products
+    -> set name='Laser Printer'
+    -> where code=8;
+
+
 -- 1.19 Apply a 10% discount to all products.
+update products
+    -> set price=0.9*price;
+
+
 -- 1.20 Apply a 10% discount to all products with a price larger than or equal to $120.
+update products
+    -> set price=0.9*price
+    -> where price>=120;
+
+
